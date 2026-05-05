@@ -8,31 +8,24 @@
   >
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <script type="module" crossorigin src="./assets/index-CrG_qnM_.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-C53BQkpf.css">
+  <script type="module" crossorigin src="./assets/index-BTYBGKak.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CfOlnv0b.css">
 </head>
-
 <body class="page">
   <div class="page__content">
     <header class="header page__section">
-      <img
-        src="./assets/logo-C_QQpFK1.svg"
-        alt="Логотип проекта Mesto"
-        class="logo header__logo"
-      >
+      <img src="./assets/logo-C_QQpFK1.svg" alt="Логотип проекта Mesto" class="logo header__logo">
     </header>
 
     <main class="content">
       <section class="profile page__section">
-        <div class="profile__image"></div>
-
+        <div class="profile__image" aria-label="Аватар пользователя"></div>
         <div class="profile__info">
           <h1 class="profile__title"></h1>
-          <button class="profile__edit-button" type="button"></button>
+          <button class="profile__edit-button" type="button" aria-label="Редактировать профиль"></button>
           <p class="profile__description"></p>
         </div>
-
-        <button class="profile__add-button" type="button"></button>
+        <button class="profile__add-button" type="button" aria-label="Добавить карточку"></button>
       </section>
 
       <section class="places page__section">
@@ -41,17 +34,13 @@
     </main>
 
     <footer class="footer page__section">
-      <p class="footer__copyright">
-        © 2021 Mesto Russia
-      </p>
+      <p class="footer__copyright">© 2021 Mesto Russia</p>
     </footer>
 
     <div class="popup popup_type_edit">
       <div class="popup__content">
-        <button type="button" class="popup__close"></button>
-
+        <button type="button" class="popup__close" aria-label="Закрыть"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
-
         <form class="popup__form" name="edit-profile" novalidate>
           <input
             id="profile-name-input"
@@ -64,7 +53,6 @@
             required
           >
           <span class="popup__input-error profile-name-input-error"></span>
-
           <input
             id="profile-description-input"
             type="text"
@@ -76,8 +64,7 @@
             required
           >
           <span class="popup__input-error profile-description-input-error"></span>
-
-          <button type="submit" class="button popup__button">
+          <button type="submit" class="button popup__button popup__button_disabled" disabled>
             Сохранить
           </button>
         </form>
@@ -86,22 +73,19 @@
 
     <div class="popup popup_type_avatar">
       <div class="popup__content">
-        <button type="button" class="popup__close"></button>
-
+        <button type="button" class="popup__close" aria-label="Закрыть"></button>
         <h3 class="popup__title">Обновить аватар</h3>
-
         <form class="popup__form" name="edit-avatar" novalidate>
           <input
             id="avatar-input"
             type="url"
             name="avatar"
-            class="popup__input popup__input_type_avatar popup__input_type_avatar-url"
+            class="popup__input popup__input_type_avatar"
             placeholder="Ссылка на аватар"
             required
           >
           <span class="popup__input-error avatar-input-error"></span>
-
-          <button type="submit" class="button popup__button">
+          <button type="submit" class="button popup__button popup__button_disabled" disabled>
             Сохранить
           </button>
         </form>
@@ -110,10 +94,8 @@
 
     <div class="popup popup_type_new-card">
       <div class="popup__content">
-        <button type="button" class="popup__close"></button>
-
+        <button type="button" class="popup__close" aria-label="Закрыть"></button>
         <h3 class="popup__title">Новое место</h3>
-
         <form class="popup__form" name="new-place" novalidate>
           <input
             id="card-name-input"
@@ -126,7 +108,6 @@
             required
           >
           <span class="popup__input-error card-name-input-error"></span>
-
           <input
             id="card-link-input"
             type="url"
@@ -136,8 +117,7 @@
             required
           >
           <span class="popup__input-error card-link-input-error"></span>
-
-          <button type="submit" class="button popup__button">
+          <button type="submit" class="button popup__button popup__button_disabled" disabled>
             Создать
           </button>
         </form>
@@ -146,10 +126,8 @@
 
     <div class="popup popup_type_confirm">
       <div class="popup__content">
-        <button type="button" class="popup__close"></button>
-
+        <button type="button" class="popup__close" aria-label="Закрыть"></button>
         <h3 class="popup__title">Вы уверены?</h3>
-
         <form class="popup__form" name="confirm-delete">
           <button type="submit" class="button popup__button">Да</button>
         </form>
@@ -158,7 +136,7 @@
 
     <div class="popup popup_type_image">
       <div class="popup__content popup__content_content_image">
-        <button type="button" class="popup__close"></button>
+        <button type="button" class="popup__close" aria-label="Закрыть"></button>
         <img class="popup__image" alt="">
         <p class="popup__caption"></p>
       </div>
@@ -166,14 +144,10 @@
 
     <div class="popup popup_type_info">
       <div class="popup__content popup__content_type_info">
-        <button type="button" class="popup__close"></button>
-
+        <button type="button" class="popup__close" aria-label="Закрыть"></button>
         <h3 class="popup__title">Статистика карточек</h3>
-
         <div class="popup__stats"></div>
-
         <h4 class="popup__subtitle">Популярные карточки:</h4>
-
         <div class="popup__chips"></div>
       </div>
     </div>
@@ -196,13 +170,11 @@
   <template id="card-template" class="template">
     <li class="places__item card">
       <img class="card__image" alt="">
-      <button type="button" class="card__delete-button"></button>
-
+      <button type="button" class="card__delete-button" aria-label="Удалить карточку"></button>
       <div class="card__description">
         <h2 class="card__title"></h2>
-
         <div class="card__like-wrapper">
-          <button type="button" class="card__like-button"></button>
+          <button type="button" class="card__like-button" aria-label="Поставить лайк"></button>
           <span class="card__like-count">0</span>
         </div>
       </div>
